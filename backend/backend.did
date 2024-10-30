@@ -1,0 +1,12 @@
+type Translation = 
+ record {
+   sourceText: text;
+   targetLanguage: text;
+   timestamp: int;
+   translatedText: text;
+ };
+service : {
+  getTranslations: () -> (vec Translation) query;
+  getTranslationsByLanguage: (text) -> (vec Translation) query;
+  storeTranslation: (text, text, text) -> ();
+}
